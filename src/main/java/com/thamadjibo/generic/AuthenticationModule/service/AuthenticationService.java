@@ -29,7 +29,11 @@ public class AuthenticationService {
 			return null;
 		
 	}
-	
+	/**
+	 * Permet d'enregistrer un nouveau utilisateur
+	 * @param user
+	 * @return
+	 */
 	public boolean signUp(User user) {
 		
 		boolean status;
@@ -38,11 +42,15 @@ public class AuthenticationService {
 		
 		return status;
 	}
+	public boolean updatePassword(User user, String newPassword) {
+		
+		boolean status;
+		status = userDao.updatePassword(user, newPassword);
+		
+		return status;
+	}
 	// Mutateur 
 	public void setUserDao(UserDao userDao) {
 		this.userDao = userDao;
 	}
-	
-	
-	
 }
